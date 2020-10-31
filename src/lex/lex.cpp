@@ -28,9 +28,9 @@ namespace myscript {
 			delete[] this->funcs;
 		}
 
-		list<Mark> Lex::run(Char* code) {
+		MarkList Lex::run(Char* code) {
 			// 最后生成的Mark对象列表
-			list<Mark> marks;
+			MarkList marks;
 			/*marks.push_back();*/
 			// 保存一个ptr
 			Char* ptr = code;
@@ -69,24 +69,22 @@ namespace myscript {
 				}
 			}
 			delete[] test_marks;
-			//for (auto i : marks) {
-			//	delete i;
-			//}
-//#ifdef  MYSCRIPT_DEBUG
-//			printf
-//#endif //  MYSCRIPT_DEBUG
 			return marks;
 
 		}
-		list<Mark> Lex::run(const Char* code) {
+		MarkList Lex::run(const Char* code) {
 			return this->run((Char *) code);
 		}
+		Mark Add(Char* s) { if (s[0] == L'+') { return add_mark; }return null_mark; }
+		Mark Les(Char* s) { if (s[0] == L'-') { return les_mark; }return null_mark; }
+		Mark Mul(Char* s) { if (s[0] == L'*') { return mul_mark; }return null_mark; }
+		Mark Div(Char* s) { if (s[0] == L'/') { return div_mark; }return null_mark; }
 
 		Mark Int(Char* s) {
 			size id = 0;
 			while (true)
 			{
-				if (s[id] == L'0'|| s[id] == L'1'|| s[id] == L'2' || s[id] == L'3' || s[id] == L'4' || s[id] == L'5' || s[id] == L'6' || s[id] == L'7' || s[id] == L'8' || s[id] == L'9') {
+				if (s[id] == L'0' || s[id] == L'1' || s[id] == L'2' || s[id] == L'3' || s[id] == L'4' || s[id] == L'5' || s[id] == L'6' || s[id] == L'7' || s[id] == L'8' || s[id] == L'9') {
 					id++;
 				}
 				else {
@@ -99,7 +97,7 @@ namespace myscript {
 					else {
 						return null_mark;
 					}
-					
+
 				}
 			}
 			return null_mark;
@@ -129,9 +127,24 @@ namespace myscript {
 			}
 			return null_mark;
 		}
-		Mark Add(Char* s) { if (s[0] == L'+') { return add_mark; }return null_mark; }
-		Mark Les(Char* s) { if (s[0] == L'-') { return les_mark; }return null_mark; }
-		Mark Mul(Char* s) { if (s[0] == L'*') { return mul_mark; }return null_mark; }
-		Mark Div(Char* s) { if (s[0] == L'/') { return div_mark; }return null_mark; }
+
+		Mark If(Char* s) {
+			if (s[0] == L'i'&&s[1] == L'f') {
+				return if_mark;
+			}
+			return null_mark;
+		}
+		Mark Elif(Char* s) {
+			if (s[0] == L'e' && s[1] == L'l' && s[2] == L'i' && s[3] == L'f') {
+				return elif_mark;
+			}
+			return null_mark;
+		}
+		Mark Else(Char* s) {
+			if (s[0] == L'e' && s[1] == L'l' && s[2] == L's' && s[3] == L'e') {
+				return else_mark;
+			}
+			return null_mark;
+		}
 	}
 }

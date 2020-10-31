@@ -14,7 +14,7 @@ namespace myscript {
 			Float(double v);
 
 
-
+			
 			virtual BaseType __add__(BaseType& o);
 			virtual BaseType __les__(BaseType& o);
 			virtual BaseType __mul__(BaseType& o);

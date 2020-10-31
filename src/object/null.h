@@ -1,4 +1,5 @@
-
+#ifndef MYSCRIPT_NULL
+#define MYSCRIPT_NULL
 #include "../core/basetype.h"
 namespace myscript {
 	namespace object {
@@ -8,8 +9,7 @@ namespace myscript {
 			myscript_definition_ID(0);
 		};
 		static NullType Null;
-		static NullType Nullb;
 	}
 }
-
+#endif
 

@@ -1,8 +1,9 @@
-#ifndef MYSCRIPTLEXMAIN
-#define MYSCRIPTLEXMAIN
+#ifndef MYSCRIPT_LEXMAIN
+#define MYSCRIPT_LEXMAIN
 #include "../core/basetype.h"
 #include "./error.h"
 #include "../lex/lex.h"
+#include <iostream>
 #include <fstream>
 #include <regex>
 

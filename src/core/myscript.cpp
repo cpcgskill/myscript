@@ -1,5 +1,4 @@
 #include "./myscript.h"
-
 namespace myscript {
     MyScript::MyScript(Char* code)
     {
@@ -15,24 +14,32 @@ namespace myscript {
 
         //BaseType* a = new BaseType();
         //NullType* b = new NullType();
-        //*(int*)*(int*)&b;
-        const Char* code = L"2 + 18.8 * 3";
-
-
-        const lex::getmarkfunc fs[] = {
-            lex::Add,
-            lex::Les,
-            lex::Mul,
-            lex::Div,
-            lex::Int,
-            lex::Float,
-            nullptr};
-        lex::Lex le(fs);
         
-        while (true)
-        {
-            le.run((Char*)code);
+        const Char* code = L"if 2 + 18.8 * 3 elif else";
+        //(*(int*)*(int*)&code);
+
+        lex::Lex le(lex::funcs);
+        
+
+        list<lex::Mark> s = le.run((Char*)code);
+
+        for (auto i : s) {
+
+            for (myscript::size t = 0; t < i.len; t++) {
+                std::wcout << i.start[t];
+            }
+            std::wcout << L"--->";
         }
+        std::wcout << L"END" << endl;
+
+
+
+        //while (true)
+        //{
+
+        //}
+
+        
         //const Char* str = L"125#";
         //wregex re(L"^[0-9]+");
         //wcmatch cm;

@@ -7,6 +7,8 @@ namespace myscript {
 	typedef char Byte;
 	typedef unsigned int size;
 	typedef const unsigned long int type_id;
+	/*typedef std::cout */
+	// std::wcout
 	//class TypeId
 	//{
 	//public:
@@ -18,7 +20,7 @@ namespace myscript {
 	//private:
 
 	//};
-#define myscript_isdebug
+#define myscript_isdebug true
 #define myscript_definition_ID(id) virtual type_id __id__() { return ID; }static type_id ID = id
 #define myscript_object_ID(obj) obj.__id__()
 #define myscript_type_ID(typ) typ::ID
