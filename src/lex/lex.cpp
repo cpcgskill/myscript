@@ -28,7 +28,7 @@ namespace myscript {
 			delete[] this->funcs;
 		}
 
-		void Lex::run(Char* code) {
+		list<Mark> Lex::run(Char* code) {
 			// 最后生成的Mark对象列表
 			list<Mark> marks;
 			/*marks.push_back();*/
@@ -72,13 +72,14 @@ namespace myscript {
 			//for (auto i : marks) {
 			//	delete i;
 			//}
-//#ifdef  DEBUG
+//#ifdef  MYSCRIPT_DEBUG
 //			printf
-//#endif //  DEBUG
+//#endif //  MYSCRIPT_DEBUG
+			return marks;
 
 		}
-		void Lex::run(const Char* code) {
-			this->run((Char *) code);
+		list<Mark> Lex::run(const Char* code) {
+			return this->run((Char *) code);
 		}
 
 		Mark Int(Char* s) {

@@ -1,6 +1,5 @@
 #include "./myscript.h"
-#include <fstream>
-#include <regex>
+
 namespace myscript {
     MyScript::MyScript(Char* code)
     {
@@ -14,9 +13,9 @@ namespace myscript {
     int main(int size, char* arge[]) {
         setlocale(LC_CTYPE, "");
 
-        BaseType* a = new BaseType();
-        NullType* b = new NullType();
-        *(int*)*(int*)&b;
+        //BaseType* a = new BaseType();
+        //NullType* b = new NullType();
+        //*(int*)*(int*)&b;
         const Char* code = L"2 + 18.8 * 3";
 
 
@@ -63,9 +62,10 @@ namespace myscript {
 }
 // MyScript.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
-#ifdef  DEBUG
+#ifdef  myscript_isdebug
 int main(int size, char* arge[])
 {
     return myscript::main(size, arge);
 }
-#endif //  DEBUG
+#elif
+#endif //  myscript_isdebug

@@ -8,6 +8,7 @@ namespace myscript {
 		END,
 		CR
 	}; 
+
 	class Token
 	{
 	public:

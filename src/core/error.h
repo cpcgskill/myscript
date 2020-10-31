@@ -1,6 +1,6 @@
 #ifndef MYSCRIPTERROR
 #define MYSCRIPTERROR
-#include "./basetype.h"
+#include "../core/basetype.h"
 namespace myscript {
 	class Error
 	{

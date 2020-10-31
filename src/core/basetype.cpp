@@ -1,4 +1,4 @@
-#include "./basetype.h"
+#include "../core/basetype.h"
 #include "./error.h"
 namespace myscript {
 	//type_id TypeId::BaseObject = 0;

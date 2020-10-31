@@ -51,8 +51,8 @@ namespace myscript {
 			Lex(getmarkfunc* funcs);
 			Lex(const getmarkfunc* funcs);
 			~Lex();
-			void run(Char * code);
-			void run(const Char* code);
+			list<Mark> run(Char * code);
+			list<Mark> run(const Char* code);
 		private:
 			getmarkfunc* funcs;
 			size len;

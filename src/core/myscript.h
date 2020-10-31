@@ -1,10 +1,10 @@
 #ifndef MYSCRIPTLEXMAIN
 #define MYSCRIPTLEXMAIN
-#include "./basetype.h"
-#include "./null.h"
-#include "./int.h"
+#include "../core/basetype.h"
 #include "./error.h"
 #include "../lex/lex.h"
+#include <fstream>
+#include <regex>
 
 namespace myscript {
 	class MyScript

@@ -1,6 +1,5 @@
 #ifndef MYSCRIPTBASEOBJECTH
 #define MYSCRIPTBASEOBJECTH
-#define DEBUG
 #include <typeinfo>
 namespace myscript {
 	using namespace std;
@@ -19,6 +18,7 @@ namespace myscript {
 	//private:
 
 	//};
+#define myscript_isdebug
 #define myscript_definition_ID(id) virtual type_id __id__() { return ID; }static type_id ID = id
 #define myscript_object_ID(obj) obj.__id__()
 #define myscript_type_ID(typ) typ::ID
